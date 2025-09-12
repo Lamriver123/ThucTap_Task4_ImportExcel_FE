@@ -48,17 +48,11 @@ export class HomeComponent implements OnInit {
       disableClose: true,
     });
 
-    dialogRef.afterClosed().subscribe((result) => {
-      if (result && result.length > 0) {
-        this.products = [...this.products, ...result];
-
-        this.productService.importProducts(result).subscribe(() => {
-
-          this.loadProducts();
-        });
-      }
+    dialogRef.afterClosed().subscribe(() => {
+        this.loadProducts();
     });
   }
+
 
   exportExcel() {
     
