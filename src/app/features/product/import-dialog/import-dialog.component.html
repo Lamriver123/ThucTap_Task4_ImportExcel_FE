@@ -1,0 +1,37 @@
+<h2 mat-dialog-title class="dialog-header">
+  <span class="material-icons">cloud_upload</span>
+  Import sản phẩm
+</h2>
+
+<mat-dialog-content class="dialog-body">
+  <div class="file-upload">
+    <label for="fileInput" class="file-label">
+      <span class="material-icons">attach_file</span> Chọn file Excel
+    </label>
+    <input
+      id="fileInput"
+      type="file"
+      (change)="onFileChange($event)"
+      accept=".xlsx"
+      hidden
+    />
+    <p *ngIf="productsBySheet.length === 0" class="hint-text">
+      Chưa có file nào được chọn
+    </p>
+  </div>
+
+  <mat-tab-group [(selectedIndex)]="activeTabIndex" *ngIf="productsBySheet.length > 0">
+    <mat-tab *ngFor="let sheet of productsBySheet" [label]="sheet.sheetName">
+      <app-product-table [products]="sheet.products"></app-product-table>
+    </mat-tab>
+  </mat-tab-group>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end" class="dialog-actions">
+  <button mat-stroked-button color="warn" mat-dialog-close>
+    <span class="material-icons">close</span> Hủy
+  </button>
+  <button mat-raised-button color="primary" (click)="onSave()">
+    <span class="material-icons">save</span> Lưu
+  </button>
+</mat-dialog-actions>

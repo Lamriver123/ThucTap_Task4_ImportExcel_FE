@@ -1,0 +1,66 @@
+<table mat-table [dataSource]="products" class="product-table">
+  <!-- ID -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef>ID</th>
+    <td mat-cell *matCellDef="let product">{{ product.id }}</td>
+  </ng-container>
+
+  <!-- Tên -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef>Tên</th>
+    <td mat-cell *matCellDef="let product">{{ product.name }}</td>
+  </ng-container>
+
+  <!-- Mô tả -->
+  <ng-container matColumnDef="description">
+    <th mat-header-cell *matHeaderCellDef>Mô tả</th>
+    <td mat-cell *matCellDef="let product">{{ product.description }}</td>
+  </ng-container>
+
+  <!-- Giá -->
+  <ng-container matColumnDef="price">
+    <th mat-header-cell *matHeaderCellDef>Giá</th>
+    <td mat-cell *matCellDef="let product">{{ product.price | currency:'VND' }}</td>
+  </ng-container>
+
+  <!-- Giảm giá -->
+  <ng-container matColumnDef="discount">
+    <th mat-header-cell *matHeaderCellDef>Giảm giá</th>
+    <td mat-cell *matCellDef="let product">
+      <span class="chip discount">
+        <span class="material-icons chip-icon">local_offer</span>
+        {{ product.discount }}%
+      </span>
+    </td>
+  </ng-container>
+
+  <!-- Hình ảnh -->
+  <ng-container matColumnDef="imageProduct">
+    <th mat-header-cell *matHeaderCellDef>Hình ảnh</th>
+    <td mat-cell *matCellDef="let product">
+      <img [src]="product.imageProduct" alt="Ảnh" class="product-img" />
+    </td>
+  </ng-container>
+
+  <!-- Tồn kho -->
+  <ng-container matColumnDef="stock">
+    <th mat-header-cell *matHeaderCellDef>Tồn kho</th>
+    <td mat-cell *matCellDef="let product">{{ product.stock }}</td>
+  </ng-container>
+
+  <!-- Trạng thái -->
+  <ng-container matColumnDef="status">
+    <th mat-header-cell *matHeaderCellDef>Trạng thái</th>
+    <td mat-cell *matCellDef="let product">
+      <span class="chip" [ngClass]="product.status === 'Còn hàng' ? 'active' : 'inactive'">
+        <span class="material-icons chip-icon">
+          {{ product.status === 'Còn hàng' ? 'check_circle' : 'cancel' }}
+        </span>
+        {{ product.status === 'Còn hàng' ? 'Còn hàng' : 'Hết hàng' }}
+      </span>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>

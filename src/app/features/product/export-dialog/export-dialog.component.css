@@ -1,0 +1,81 @@
+/* Làm dialog to ra (60–80% màn hình) */
+::ng-deep .mat-mdc-dialog-container {
+  min-width: 60vw !important;
+  max-width: 80vw !important;
+  min-height: 60vh !important;
+  max-height: 85vh !important;
+  border-radius: 14px;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Header */
+.dialog-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  background: linear-gradient(45deg, #64b5f6, #90caf9);
+  color: #0d47a1;
+  padding: 14px 20px;
+}
+
+/* Body */
+.dialog-body {
+  padding: 20px;
+  background-color: #fafafa;
+  max-height: 65vh;
+  overflow-y: auto;
+}
+
+/* File upload */
+.file-upload {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.file-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(45deg, #42a5f5, #478ed1);
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.file-label:hover {
+  opacity: 0.9;
+}
+
+.hint-text {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #757575;
+}
+
+/* Preview table */
+.preview-table {
+  border-radius: 8px;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 8px;
+}
+
+/* Actions */
+.dialog-actions {
+  padding: 12px 20px;
+  background: #f5f5f5;
+  border-top: 1px solid #ddd;
+  display: flex;
+  gap: 10px;
+}
+.dialog-actions button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+}

@@ -1,0 +1,17 @@
+<div class="toolbar">
+  <button mat-raised-button color="primary" (click)="openImportDialog()">
+    <span class="material-icons">file_upload</span>
+    Import
+  </button>
+
+  <button mat-raised-button color="accent" (click)="exportAllExcel()">
+    <span class="material-icons">file_download</span>
+    Export All
+  </button>
+  <button mat-raised-button color="accent" (click)="exportExcel()">
+    <span class="material-icons">file_download</span>
+    Export
+  </button>
+</div>
+
+<app-product-table [products]="products"></app-product-table>

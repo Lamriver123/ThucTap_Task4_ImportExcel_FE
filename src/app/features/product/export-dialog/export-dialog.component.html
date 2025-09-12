@@ -1,0 +1,31 @@
+<h2 mat-dialog-title>Chọn sản phẩm để Export</h2>
+
+
+<h2 mat-dialog-title class="dialog-header">
+  <span class="material-icons">cloud_download</span>
+  Export sản phẩm
+</h2>
+
+<mat-dialog-content class="dialog-body">
+  <app-select-product-table
+    [products]="products"
+    (selectedChange)="onSelectedProductsChange($event)">
+  </app-select-product-table>
+
+  <h3>Xem trước sản phẩm được chọn</h3>
+  <app-product-table [products]="selectedProducts"></app-product-table>
+</mat-dialog-content>
+
+
+
+<mat-dialog-actions align="end" class="dialog-actions">
+  <div mat-dialog-actions align="end">
+  <button mat-button (click)="cancel()">Hủy</button>
+  <button mat-raised-button color="primary" (click)="confirmExport()" [disabled]="!selectedProducts.length">
+    Export ({{ selectedProducts.length }})
+  </button>
+</div>
+</mat-dialog-actions>
+
+
+

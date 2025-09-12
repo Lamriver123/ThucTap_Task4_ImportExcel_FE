@@ -1,0 +1,10 @@
+.dialog-content {
+  width: 100%;
+  max-height: 60vh;
+  overflow: auto;
+}
+
+::ng-deep .mat-mdc-dialog-container {
+  width: 80vw !important;   /* chiếm 80% màn hình */
+  max-width: none !important;
+}
