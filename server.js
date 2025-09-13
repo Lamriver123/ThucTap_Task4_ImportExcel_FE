@@ -4,7 +4,7 @@ const path = require('path');
 const app = express();
 
 // Thư mục build Angular browser
-const browserDist = path.join(__dirname, '../dist/import_product_fe/browser');
+const browserDist = path.join(__dirname, './dist/import_product_fe/browser');
 
 app.use(express.static(browserDist));
 
