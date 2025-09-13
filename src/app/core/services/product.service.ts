@@ -8,8 +8,8 @@ import { Product } from '../../models/product.model';
   providedIn: 'root',
 })
 export class ProductService {
-  private apiUrl = 'https://localhost:7189/api/Product'; 
-
+  //private apiUrl = 'https://localhost:7189/api/Product'; 
+  private apiUrl = 'https://product-import-api-a8bxasbjehbahkbb.southeastasia-01.azurewebsites.net/api/Product'; 
   constructor(private http: HttpClient) {}
 
   getProducts(): Observable<Product[]> {

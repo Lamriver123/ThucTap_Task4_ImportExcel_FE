@@ -57,7 +57,7 @@ export class ImportDialogComponent {
           return;
         }
 
-        // kiểm tra header có hợp lệ không
+        // kiểm tra header excel
         const requiredCols = [
           'id',
           'name',
