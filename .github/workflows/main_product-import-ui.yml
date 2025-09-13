@@ -26,12 +26,12 @@ jobs:
       - name: Build Angular app
         run: npm run build --if-present
 
-      # 👉 chỉ upload thư mục dist thay vì cả source
+      # 👉 chỉ upload thư mục dist/import_product_fe/browser
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
           name: angular-dist
-          path: dist/
+          path: dist/import_product_fe/browser/
 
   deploy:
     runs-on: ubuntu-latest
