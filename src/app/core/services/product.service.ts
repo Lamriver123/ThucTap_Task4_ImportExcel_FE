@@ -9,11 +9,12 @@ import { Product } from '../../models/product.model';
 })
 export class ProductService {
   //private apiUrl = 'https://localhost:7189/api/Product'; 
+  
   private apiUrl = 'https://product-import-api-a8bxasbjehbahkbb.southeastasia-01.azurewebsites.net/api/Product'; 
   constructor(private http: HttpClient) {}
 
   getProducts(): Observable<Product[]> {
-    console.log("📡 GET Products URL:", this.apiUrl);
+    console.log("📦 Fetching products from API");
     return this.http.get<Product[]>(this.apiUrl);
   }
 
