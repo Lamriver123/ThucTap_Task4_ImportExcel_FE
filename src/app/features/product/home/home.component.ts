@@ -29,6 +29,7 @@ export class HomeComponent implements OnInit {
   constructor(private dialog: MatDialog, private productService: ProductService, private cdr: ChangeDetectorRef) {}
 
   ngOnInit(): void {
+    console.log("🏠 HomeComponent initialized");
     this.loadProducts(); 
   }
 
